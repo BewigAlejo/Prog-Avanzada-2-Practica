@@ -9,8 +9,8 @@ public class Area {
     private Integer telefono;
     List<Documento> documento = new ArrayList<>();
     
-    public Area(Integer idArea, String nombreArea, Integer telefono, List<Documento> documentos){
-        this.idArea = idArea;
+    public Area(String nombreArea, Integer telefono, List<Documento> documentos){
+        this.idArea = idArea++;
         this.nombreArea = nombreArea;
         this.telefono = telefono;
         this.documento = new ArrayList<>();
@@ -32,9 +32,7 @@ public class Area {
     public void setDocumento(List<Documento> documento) {
         this.documento = documento;
     }
-    public void setIdArea(Integer idArea) {
-        this.idArea = idArea;
-    }
+    
     public void setNombreArea(String nombreArea) {
         this.nombreArea = nombreArea;
     }

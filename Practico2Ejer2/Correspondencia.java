@@ -7,7 +7,7 @@ public class Correspondencia extends Documento{
     private String direccion;
 
     public Correspondencia(Integer id, Integer fechaCreacion, String remitente, String direccion, Area area, List<Movimiento> movimientos) {
-        super(id, fechaCreacion, movimientos , area);
+        super(fechaCreacion, movimientos , area);
         this.remitente = remitente;
         this.direccion = direccion;
     }

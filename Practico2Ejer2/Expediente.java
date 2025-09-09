@@ -9,7 +9,7 @@ public class Expediente extends Documento{
     private String anexo;
 
     public Expediente(Integer id, Integer fechaCreacion, Integer nroExpediente, String letra, Integer anioExpediente, String anexo, Area area, List<Movimiento> movimientos) {
-        super(id, fechaCreacion, movimientos , area);
+        super(fechaCreacion, movimientos , area);
         this.nroExpediente = nroExpediente;
         this.letra = letra;
         this.anioExpediente = anioExpediente;

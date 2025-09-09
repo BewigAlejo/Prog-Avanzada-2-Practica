@@ -10,8 +10,8 @@ public class Documento {
     private Area area;
     List<Movimiento> movimiento = new ArrayList<>();
     
-    public Documento(Integer id, Integer fechaCreacion, List<Movimiento> movimientos, Area area){
-        this.id = id;
+    public Documento(Integer fechaCreacion, List<Movimiento> movimientos, Area area){
+        this.id = id++;
         this.fechaCreacion = fechaCreacion;
         this.movimiento = new ArrayList<>();
         this.area = area;
@@ -47,7 +47,4 @@ public class Documento {
         this.fechaCreacion = fechaCreacion;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 }

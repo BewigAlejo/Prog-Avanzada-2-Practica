@@ -8,7 +8,7 @@ public class Nota extends Documento{
     private String asunto;
 
     public Nota(Integer id, Integer fechaCreacion, Integer nroNota, Integer anioNota, String asunto, Area area, List<Movimiento> movimientos) {
-        super(id, fechaCreacion, movimientos , area);
+        super(fechaCreacion, movimientos , area);
         this.nroNota = nroNota;
         this.anioNota = anioNota;
         this.asunto = asunto;
