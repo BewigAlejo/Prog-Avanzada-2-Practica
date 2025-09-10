@@ -6,10 +6,10 @@ public class Ejemplar {
     private Integer nroInventario;
     private Libro libro;
 
-    public Ejemplar(Boolean prestado, Boolean sale, Integer nroInventario, Libro libro) {
+    public Ejemplar(Boolean prestado, Boolean sale, Libro libro) {
         this.prestado = prestado;
         this.sale = sale;
-        this.nroInventario = nroInventario;
+        this.nroInventario = nroInventario++;
         this.libro = libro;
     }
 
@@ -31,10 +31,6 @@ public class Ejemplar {
 
     public void setLibro(Libro libro) {
         this.libro = libro;
-    }
-
-    public void setNroInventario(Integer nroInventario) {
-        this.nroInventario = nroInventario;
     }
 
     public void setPrestado(Boolean prestado) {

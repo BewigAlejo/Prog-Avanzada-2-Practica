@@ -6,15 +6,14 @@ import java.util.Scanner;
 
 public class tp3Main {
 
-    public static void generarEjemplar(Libro libro) {
-        Scanner entrada = new Scanner(System.in);
-        System.out.println("Ingrese el numero de inventario del ejemplar:");
-        Integer nroInventario = entrada.nextInt();
+    public static void generarEjemplar(Libro libro, List<Ejemplar> ejemplares) {
         Boolean prestado = false;
         Boolean sale = false;
-        Ejemplar ejemplar = new Ejemplar(prestado, sale, nroInventario, libro);
-        libro.getEjemplares().add(ejemplar);
-        System.out.println("Ejemplar creado con exito.");
+
+        Ejemplar ejemplar = new Ejemplar(prestado, sale, libro);
+        ejemplares.add(ejemplar);
+        libro.setEjemplares(ejemplares);
+        System.out.println("Ejemplar creado");
     }
 
     public static void main(String[] args) {
@@ -39,10 +38,12 @@ public class tp3Main {
         System.out.println("El libro creado es: " + libro.getTitulo() + " de " + libro.getAutores().get(0).getAutor() + ", edicion " + libro.getEdicion());
         
         //Instanciar 4 ejemplares y asociarlos al libro
+        List<Ejemplar> ejemplares = new ArrayList<Ejemplar>();
         for(int i = 0; i<4 ; i++ ) {
-            generarEjemplar(libro);
+            generarEjemplar(libro, ejemplares);
         }
 
+        
         //Mostrar los datos del ejemplar
         for(Ejemplar ejemplar : libro.getEjemplares()) {
             System.out.println("Se va a mostrar un ejemplar ----------------------");
