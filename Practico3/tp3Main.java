@@ -22,9 +22,7 @@ public class tp3Main {
         System.out.println("Ingrese el titulo del libro:");
         String titulo = scanner.nextLine();
 
-        System.out.println("Ingrese la edicion del libro:");
-        Integer edicion = scanner.nextInt();
-
+        
         //Crear autor, cargar los datos y aniadirlo a la list
         System.out.println("Ingrese el autor del libro:");
         Autor autor = new Autor(null, null); 
@@ -34,9 +32,21 @@ public class tp3Main {
         autores.add(autor);
         
         //Crear el libro con los datos q cargamos
-        Libro libro = new Libro(titulo, edicion, null, autores, null);
-        System.out.println("El libro creado es: " + libro.getTitulo() + " de " + libro.getAutores().get(0).getAutor() + ", edicion " + libro.getEdicion());
-        
+        //Si queremos que no se rompa el programa cuando se carga la edicion, hay que poner un do while hasta que se cargue bien la edicion
+        //y adentro del do while un try catch para el libro
+        Boolean creado = false;
+        Libro libro = null;
+        do {
+            try {
+                System.out.println("Ingrese la edicion del libro:");
+                Integer edicion = scanner.nextInt();
+                libro = new Libro(titulo, edicion, null, autores, null);
+                creado = true;
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        } while (creado==false);
+
         //Instanciar 4 ejemplares y asociarlos al libro
         List<Ejemplar> ejemplares = new ArrayList<Ejemplar>();
         for(int i = 0; i<4 ; i++ ) {

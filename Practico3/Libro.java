@@ -15,6 +15,9 @@ public class Libro {
         this.biblioteca = biblioteca;
         this.edicion = edicion;
         //Hay que mandar un try catch para el punto 3 -> edicion < 1900 || edicion > 2018
+        if (edicion < 1900 || edicion > 2018) {
+            throw new RuntimeException("La edición debe estar entre 1900 y 2018.");
+        }
         this.autores = new ArrayList<Autor>();
         this.ejemplares = new ArrayList<Ejemplar>();
     }
