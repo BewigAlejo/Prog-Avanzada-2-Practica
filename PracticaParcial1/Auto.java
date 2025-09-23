@@ -74,7 +74,7 @@ public class Auto {
         Scanner scanner = new Scanner(System.in);
         String patenteComp = scanner.nextLine();
         for (Auto auto : autos) {
-            if (auto.getPatente().equals(patenteComp)) {
+            if (auto.getPatente().equals(patenteComp) && (auto.getAlquilado() == false)) {
                 System.out.println("Has seleccionado el auto:");
                 System.out.println("Marca: " + auto.getMarca() + ", Modelo: " + auto.getModelo() + ", Patente: " + auto.getPatente());
                 System.out.println("-------------------");
@@ -103,7 +103,9 @@ public class Auto {
                 break;
             }
         }
-
+        
+        System.out.println("-------------------");
+        System.out.println("-------------------");
         System.out.println("Autos disponibles:");
         for(Auto auto : autos){
             if (auto.getAlquilado() == false) {

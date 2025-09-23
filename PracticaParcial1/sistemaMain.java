@@ -24,28 +24,27 @@ public class sistemaMain {
                         Auto.registrarAuto(autos);
                         break;
                     case 3:
+                        Boolean encontrado = false;
                         System.out.println("Ingrese su DNI para continuar:");
                         String dni = scanner.next();
                         for (Cliente cliente : clientes) {
                             if (cliente.getDni().equals(dni)) {
                                 System.out.println("Bienvenido " + cliente.getNombre());
                                 Auto.listarAutos(autos, cliente, alquileres);
-                            } else {
-                                System.out.println("DNI no encontrado. Registrese primero.");
+                                encontrado = true;
+                                break;
                             }
+                        }
+                        if (encontrado == false) {
+                            System.out.println("DNI no encontrado. Registrese primero.");
                         }
                         break;
                     case 4:
-                        System.out.println("Ingrese la patente del auto a devolver:");
-                        scanner.nextLine(); // Limpia el buffer después de nextInt()
-                        String patente = scanner.nextLine();
-                        for(Auto auto : autos){
-                            if(auto.getPatente().equals(patente)){
-                                Auto.devolverAuto(autos, alquileres);
-                            }else{
-                                System.out.println("Patente no encontrada. Intente nuevamente.");
-                            }
-                        }
+                        Auto.devolverAuto(autos, alquileres);
+                        break;
+                    case 5:
+                        System.out.println("Saliendo del sistema. ¡nv gay!");
+                        break;
                     default:
                         break;
                 }
