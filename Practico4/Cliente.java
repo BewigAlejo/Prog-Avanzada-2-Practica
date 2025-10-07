@@ -73,6 +73,7 @@ public class Cliente {
 
     public static void createCliente(List<Cliente> clientes){
         Scanner scanner = new Scanner(System.in);
+        FacturaService servicio = new FacturaService();
         System.out.println("Ingrese el nombre del cliente: ");
         String nombre = scanner.nextLine();
         System.out.println("Ingrese el apellido del cliente: ");
@@ -86,6 +87,7 @@ public class Cliente {
 
         Cliente cliente = new Cliente(nombre, apellido, dni, direccion, telefono, null);
         clientes.add(cliente);
+        servicio.agregarCliente(cliente);
         System.out.println("Cliente creado exitosamente.");
     }
 
@@ -148,5 +150,5 @@ public class Cliente {
             }
         }
     }
-
+    
 }

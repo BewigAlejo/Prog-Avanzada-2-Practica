@@ -37,6 +37,7 @@ public class Articulo {
         String nombre = scanner.nextLine();
         System.out.println("Ingrese el precio del articulo: ");
         Double precio = scanner.nextDouble();
+        scanner.nextLine();
 
         
         int var = scanner.nextInt();
@@ -47,16 +48,20 @@ public class Articulo {
                     Double potenciaMaxima;
                     System.out.println("Ingrese la potencia maxima del articulo: ");
                     potenciaMaxima = scanner.nextDouble();
+                    scanner.nextLine();
                     System.out.println("Es un articulo industrial o domestico? \n1. Industrial \n2. Domestico  \3. Ninguno");
                     int tipo = scanner.nextInt();
+                    scanner.nextLine();
                     if (tipo == 1) {
                         // Crear articulo de Industrial
                             Double temperaturaMinima;
                             Double temperaturaMaxima;
                             System.out.println("Ingrese la temperatura minima del articulo: ");
                             temperaturaMinima = scanner.nextDouble();
+                            scanner.nextLine();
                             System.out.println("Ingrese la temperatura maxima del articulo: ");
                             temperaturaMaxima = scanner.nextDouble();
+                            scanner.nextLine();
                             Industrial industrial = new Industrial(nombre, precio, potenciaMaxima, temperaturaMinima, temperaturaMaxima);
                             articulos.add(industrial);
                     }else if (tipo == 2) {
