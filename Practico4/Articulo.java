@@ -39,9 +39,9 @@ public class Articulo {
         Double precio = scanner.nextDouble();
         scanner.nextLine();
 
-        
-        int var = scanner.nextInt();
         System.out.println("Seleccione el tipo de articulo: \n1. Electricidad \n2. Herramienta \n3. Generico");
+        int var = scanner.nextInt();
+        scanner.nextLine();
         switch (var) {
             case 1:
                 // Crear articulo de Electricidad
